@@ -1,0 +1,46 @@
+﻿<html>
+ <head>
+  <meta charset="utf-8">
+  <title>Реестр сотрудников</title>
+  <link href="css/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/main.css" rel="stylesheet">
+  <script src="js/jquery/jquery.min.js"></script>
+  <script src="js/bootstrap/bootstrap.min.js"></script>
+ </head>
+ <body>
+     <div id="notifies" style="width:50%;"  class="center-block"></div>
+ <div style="height:80%; width:50%; margin-top: 10px;" class="center-block">
+ <legend>Реестр сотрудников <a href="index1.html" style="float:right;"><small><em>Добавить сотрудника</em></small></a> </legend>
+  <div>
+    <form  method="POST" id="search_employees_form" action="javascript:void(null);" onsubmit="search(1)">
+      <div>  
+        <input type="text" placeholder="Поиск" id="search_text" name="search_text" class="form-control" pattern="^[a-zA-Z-А-Яа-яЁё\s]+$" />
+        <div style="display:inline-block; vertical-align: bottom;width:100px; height:100px; margin-top: 5px;">
+         <label>Пол:</label>
+         <div class="checkbox">
+          <label>
+            <input type="checkbox" name="male" id="male" value="1" aria-label="...">
+            Муж
+          </label>
+        </div>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" name="female" id="female" value="2" aria-label="...">
+            Жен
+          </label>
+        </div>
+     </div>
+     <div style="display:inline-block; vertical-align: bottom;width:100px; height:100px;">
+            <label>Возраст:</label>
+            <input type="text" placeholder="с" name="age_first" id="age_first" class="form-control col-xs-2" style="margin-bottom: 10px;" pattern="^[ 0-9]{1,3}" />
+            <input type="text" placeholder="по" name="age_last" id="age_last" class="form-control col-xs-2" pattern="^[ 0-9]{1,3}" />
+     </div>
+    </div>
+    <button type="submit" class="btn btn-success" style="float:right;">Поиск</button>
+  </form>
+ </div>
+ <div id="result_search" style="margin-top: 45px;"></div>
+</div>
+ <script type="text/javascript" src="js/script.js"></script>
+ </body>
+</html>

@@ -1,0 +1,73 @@
+﻿<!doctype html>
+<html>
+ <head>
+  <meta charset="utf-8">
+  <title>Создание сотрудника</title>
+  <link href="css/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/bootstrap/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+  <link href="css/bootstrap/css/fileinput.css" rel="stylesheet">
+
+   <script type="text/javascript" src="js/jquery/jquery-1.11.1.min.js"></script>
+   <script type="text/javascript" src="js/locales/moment-with-locales.min.js"></script>
+   <script type="text/javascript" src="js/bootstrap/bootstrap.min.js"></script>
+   <script type="text/javascript" src="js/bootstrap/bootstrap-datetimepicker.min.js"></script>
+   <script type="text/javascript" src="js/bootstrap/fileinput.js"></script>
+   <script type="text/javascript" src="js/locales/ru.js"></script>
+
+ </head>
+ <body>
+ <div style="height:80%; width:50%; margin-top: 10px;" class="center-block">
+ <legend>Создание сотрудника</legend>
+ <form class="form-horizontal" enctype="multipart/form-data" method="POST" id="add_employee_form" action="javascript:void(null);" onsubmit="add(this); return false;">
+      <div class="form-group">
+        <label for="last_name" class="col-sm-2 control-label">Фамилия <span style="color: #CC0000">*</span> </label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="last_name" name="last_name" required pattern="^[a-zA-Z-А-Яа-яЁё\s]{1,}" />
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="first_name" class="col-sm-2 control-label">Имя <span style="color: #CC0000">*</span> </label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="first_name" name="first_name" required pattern="^[a-zA-Z-А-Яа-яЁё\s]{1,}" />
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="middle_name" class="col-sm-2 control-label">Отчество </label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="middle_name" name="middle_name" pattern="^[a-zA-Z-А-Яа-яЁё\s]{1,}" />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="date" class="col-sm-2 control-label">Дата рождения <span style="color: #CC0000">*</span></label>
+        <div class="input-group date" id="date" style="width: 635px; margin-left: 0px; left: 15px;">
+            <input type="text" class="form-control" name="date" required  pattern="(0[1-9]|1[0-9]|2[0-9]|3[01]).(0[1-9]|1[012]).[0-9]{4}" />
+            <span class="input-group-addon">
+              <span class="glyphicon glyphicon-calendar"></span>
+            </span>
+          </div>
+      </div>
+    <div class="form-group">
+        <label for="sex" class="col-sm-2 control-label">Пол <span style="color: #CC0000">*</span></label>
+        <div class="col-sm-10">
+           <select class="form-control" name="sex" id="sex" required>
+              <option value="1">Мужской</option>
+              <option value="2">Женский</option>
+            </select>
+        </div>
+      </div>
+    <div class="form-group">
+       <label for="photo" class="col-sm-2 control-label">Фото</label>
+       <div class="col-sm-10">
+        <input type="file" class="file" name="photo" id="photo">
+       </div>
+ </div>
+  <div style="margin-left: 60px;"><span style="color: #CC0000">*</span>обязательные поля</div>
+     <button type="button" onclick='location.href="index.html"' class="btn btn-danger" style="float:right;">Отмена</button>
+     <button type="submit" class="btn btn-success" style="float:right; margin-right: 10px;">Сохранить</button>
+  </form>
+
+</div>
+<script type="text/javascript" src="js/script.js"></script>
+ </body>
+</html>
